@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PORTFOLIO WEBSITE  -  index.html
+  Lidamulage Prabod Praharsha Silva  (L. P. P. Silva)
+  ============================================================
+
+  THIS FILE = THE STRUCTURE of the page (the skeleton).
+  It holds the words, headings, images and links.
+
+  It works together with two other files:
+    style.css   -> how everything LOOKS   (colours, sizes, layout)
+    script.js   -> how everything BEHAVES (menu, scrolling)
+
+  Both are connected near the top and bottom of this file.
+
+  BEFORE YOU PUBLISH, replace every "#" placeholder link:
+    - your GitHub profile link      (Contact section)
+    - the 4 project GitHub links    (Projects section)
+    - the years marked 20XX         (Education section)
+    - the institute names           (Education section)
+  ============================================================
+-->
+<html lang="en">
+<!--
+  lang="en"  tells browsers, Google and screen readers that this
+  page is written in English.
+-->
+
+<head>
+  <!--
+    ==========================================================
+    HEAD  -  information ABOUT the page.
+    Nothing in here is visible on the screen.
+    ==========================================================
+  -->
+
+  <!-- Lets the page use any character (à, ñ, ✓, emoji) without breaking -->
+  <meta charset="UTF-8">
+
+  <!--
+    THE MOST IMPORTANT LINE FOR MOBILE.
+    It tells a phone "use your real screen width".
+    Without it, the whole site appears zoomed-out and tiny on phones.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- One-line summary shown by Google under your page title -->
+  <meta name="description"
+        content="Prabod Praharsha Silva - third-year BSc (Hons) Computer Science
+                 undergraduate at the University of Sri Jayewardenepura.
+                 Full-stack web and desktop application projects.">
+
+  <!-- Shown on the browser tab and as the blue headline in Google results -->
+  <title>Prabod Praharsha Silva | Computer Science Undergraduate</title>
+
+  <!--
+    GOOGLE FONT (Poppins).
+    preconnect = start talking to Google's servers early, so the
+    font arrives faster. Optional, but it speeds up loading.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <!--
+    MY STYLESHEET.
+    Without this line the page still works, but it looks like a
+    plain black-and-white document. This is what connects style.css.
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<!--
+  ============================================================
+  BODY  -  everything a visitor can actually SEE.
+  ============================================================
+-->
+
+
+  <!--
+    ============================================================
+    1. HEADER  -  logo + navigation menu
+       <header> and <nav> are "semantic" tags: they describe
+       MEANING, not appearance. A <div> would look the same but
+       would tell the browser nothing.
+       CSS makes this bar stick to the top when you scroll.
+    ============================================================
+  -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- href="#home" jumps to the element with id="home" (the hero) -->
+      <a href="#home" class="logo">Prabod<span>.</span></a>
+
+      <!--
+        HAMBURGER BUTTON.
+        Hidden on computers, shown on phones (see the media query
+        in style.css). script.js makes it open and close the menu.
+        aria-label = what a screen reader announces, since the
+        button contains only a symbol.
+        &#9776; is the three-lines character.
+      -->
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">&#9776;</button>
+
+      <!--
+        NAVIGATION.
+        Each href="#something" scrolls to the section whose
+        id is that same word. This is how a one-page site works.
+      -->
+      <nav class="nav" id="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!--
+    ============================================================
+    2. HERO  -  the first thing a visitor sees
+       Name, one-line introduction, two buttons, photo.
+    ============================================================
+  -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+
+      <div class="hero-text">
+
+        <!-- Small pill above the name -->
+        <p class="tag">Open to internships</p>
+
+        <!--
+          <h1> = the single most important heading on the page.
+          USE IT ONLY ONCE. Section titles are <h2>, things inside
+          those are <h3>. Never skip a level - Google and screen
+          readers use this order to understand your page.
+        -->
+        <h1>Prabod Praharsha Silva</h1>
+
+        <p class="subtitle">
+          Third-year BSc (Hons) Computer Science undergraduate at the University of
+          Sri Jayewardenepura, building full-stack web and desktop applications.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View my projects</a>
+
+          <!--
+            download  = the browser saves the PDF instead of
+            opening it in a new tab.
+            Put your CV in the assets folder as resume.pdf
+          -->
+          <a href="assets/resume.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+
+      </div>
+
+      <div class="hero-photo">
+        <!--
+          alt = description read aloud by screen readers, and shown
+          if the image fails to load. NEVER leave it empty on a
+          meaningful image.
+          File names are case-sensitive once the site is online:
+          profile.jpg is NOT the same as Profile.JPG
+        -->
+        <img src="assets/profile.jpg" alt="Portrait of Prabod Praharsha Silva">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--
+    ============================================================
+    3. ABOUT  -  two paragraphs + a quick-facts box
+       CSS puts these side by side on a computer and stacks
+       them on a phone.
+    ============================================================
+  -->
+  <section class="section" id="about">
+    <div class="container">
+
+      <h2 class="section-title">About me</h2>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            I am a third-year undergraduate for a BSc (Hons) in Computer Science at the
+            University of Sri Jayewardenepura, in the Faculty of Applied Sciences. I came into the
+            degree through the Physical Science (Mathematics) stream at Royal College, Colombo 07,
+            and that grounding still shapes how I work &mdash; I would rather understand why something
+            behaves the way it does than memorise the steps.
+          </p>
+          <p>
+            Most of my work so far has been full-stack: a microservices platform built with React,
+            Spring Boot and Docker, database-driven web applications in PHP and MySQL, and desktop
+            software in Java and C#. Alongside the degree I have completed diplomas in ICT and in
+            Human Resource Management, which means I think about the people a system is for as much
+            as the architecture behind it. I am now looking for my first software engineering internship.
+          </p>
+        </div>
+
+        <!--
+          A <ul> is used because this genuinely IS a list of facts.
+          CSS turns each <li> into a stacked label + value row.
+          &mdash; and &ndash; are the long and medium dash characters.
+        -->
+        <ul class="fact-list">
+          <li><strong>Full name</strong><span>L. P. P. Silva</span></li>
+          <li><strong>Location</strong><span>Panadura, Kalutara District</span></li>
+          <li><strong>University</strong><span>Univ. of Sri Jayewardenepura</span></li>
+          <li><strong>Year</strong><span>Third year, 2026&ndash;present</span></li>
+          <li><strong>Looking for</strong><span>Software engineering internships</span></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+    ============================================================
+    4. SKILLS  -  four grouped cards
+       class="section-alt" gives this section a slightly
+       different background, so sections separate visually
+       without needing a border.
+    ============================================================
+  -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+
+      <h2 class="section-title">Skills &amp; tools</h2>
+      <!-- &amp; is how you write the "&" character in HTML -->
+
+      <!--
+        CSS uses grid-template-columns: repeat(auto-fit, minmax(230px, 1fr))
+        on this wrapper, which means: fit as many cards per row as
+        possible, but never squeeze one below 230px. Four across on a
+        laptop, two on a tablet, one on a phone - with no extra code.
+      -->
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <ul>
+            <li>Java</li>
+            <li>C#</li>
+            <li>PHP</li>
+            <li>HTML5</li>
+            <li>CSS</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Frameworks &amp; tools</h3>
+          <ul>
+            <li>Spring Boot</li>
+            <li>React</li>
+            <li>.NET Framework</li>
+            <li>WinForms</li>
+            <li>Java Swing</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Databases &amp; concepts</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>Database design</li>
+            <li>CRUD operations</li>
+            <li>Object-oriented programming</li>
+            <li>Microservices</li>
+            <li>UI design</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>Human resources</h3>
+          <ul>
+            <li>Recruitment</li>
+            <li>Onboarding</li>
+            <li>Training &amp; development</li>
+            <li>Employee relations</li>
+            <li>HR policies</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+    ============================================================
+    5. PROJECTS  -  the section employers actually read
+       <article> is used for each project because each one is a
+       self-contained piece of content that would still make
+       sense on its own. That is exactly what the tag is for.
+
+       >>> REPLACE EVERY href="#" WITH YOUR REAL GITHUB LINK <
+       A link that goes nowhere is worse than no link at all.
+    ============================================================
+  -->
+  <section class="section" id="projects">
+    <div class="container">
+
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-grid">
+
+        <!-- ---------- Project 1 ---------- -->
+        <article class="project-card">
+          <p class="project-type">University project</p>
+          <h3>ClassMate.lk</h3>
+          <p class="project-desc">
+            A web platform for finding tuition classes, built as a set of independent
+            microservices. A React front end talks to Spring Boot services, each one
+            containerised with Docker so they can be deployed separately.
+          </p>
+          <ul class="tech-list">
+            <li>React</li>
+            <li>Spring Boot</li>
+            <li>Docker</li>
+            <li>Microservices</li>
+          </ul>
+          <!--
+            target="_blank"  = open in a NEW tab, so the visitor
+                               does not lose your site.
+            rel="noopener"   = a small security precaution that goes
+                               with it. Always use the two together.
+            &rarr; is the right-arrow character.
+          -->
+          <a href="#" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        <!-- ---------- Project 2 ---------- -->
+        <article class="project-card">
+          <p class="project-type">Web application</p>
+          <h3>The Farmhouse DBMS</h3>
+          <p class="project-desc">
+            A database management system for a farmhouse business, built as a PHP and
+            MySQL web application with a hand-written HTML and CSS front end.
+          </p>
+          <ul class="tech-list">
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>HTML5</li>
+            <li>CSS</li>
+          </ul>
+          <a href="#" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        <!-- ---------- Project 3 ---------- -->
+        <article class="project-card">
+          <p class="project-type">Desktop application</p>
+          <h3>Airline Ticket Booking System</h3>
+          <p class="project-desc">
+            A booking and reservation system written in Java with a Swing interface over
+            a MySQL database, covering full create, read, update and delete operations.
+          </p>
+          <ul class="tech-list">
+            <li>Java</li>
+            <li>Java Swing</li>
+            <li>MySQL</li>
+            <li>OOP</li>
+          </ul>
+          <a href="#" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        <!-- ---------- Project 4 ---------- -->
+        <article class="project-card">
+          <p class="project-type">ICT Diploma final project</p>
+          <h3>Library Management System</h3>
+          <p class="project-desc">
+            A desktop application for managing library members, titles and loans, built
+            in C# with WinForms on the .NET Framework.
+          </p>
+          <ul class="tech-list">
+            <li>C#</li>
+            <li>WinForms</li>
+            <li>.NET Framework</li>
+          </ul>
+          <a href="#" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        <!-- ---------- Project 5 (no code, so no GitHub link) ---------- -->
+        <article class="project-card">
+          <p class="project-type">HRM Diploma final project</p>
+          <h3>HR Practices at Senpathi (Pvt) Ltd</h3>
+          <p class="project-desc">
+            A study of human resource management practices at a Sri Lankan company,
+            covering recruitment, onboarding, training and employee engagement, with
+            recommendations for their HR policy.
+          </p>
+          <ul class="tech-list">
+            <li>Recruitment</li>
+            <li>Onboarding</li>
+            <li>HR policy</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+    ============================================================
+    6. EDUCATION  -  a vertical timeline
+       Newest first. That is the convention, and it puts your
+       degree at the top where it belongs.
+       The line and the dots are drawn entirely in CSS
+       (border-left + the ::before pseudo-element) - no images.
+
+       >>> FILL IN THE 20XX YEARS AND INSTITUTE NAMES <
+    ============================================================
+  -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+
+      <h2 class="section-title">Education</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <span class="timeline-date">2026 &ndash; Present</span>
+          <h3>BSc (Hons) in Computer Science</h3>
+          <p class="timeline-org">University of Sri Jayewardenepura &mdash; Faculty of Applied Sciences</p>
+          <p class="timeline-desc">
+            Currently in my third year. Admitted through the Physical Science
+            (Mathematics) stream.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2023-2024</span>
+          <h3>Diploma in Information &amp; Communication Technology</h3>
+          <p class="timeline-org">IMBS Green Campus</p>
+          <p class="timeline-desc">
+            Final project: a Library Management System built in C# and WinForms.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">2023-2024</span>
+          <h3>Diploma in Human Resource Management</h3>
+          <p class="timeline-org">IMBS Green Campus</p>
+          <p class="timeline-desc">
+            Final project: a study of HR practices at Senpathi (Pvt) Ltd.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-date">GCE Advanced Level - 2022/2023</span>
+          <h3>Physical Science &mdash; Mathematics stream</h3>
+          <p class="timeline-org">Royal College, Colombo 07</p>
+          <p class="timeline-desc">
+            Results qualified me for university admission in 2024.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+    ============================================================
+    7. CONTACT
+       class="center" on the heading moves its gold underline
+       to the middle instead of the left.
+
+       >>> PUT YOUR GITHUB PROFILE LINK IN <
+    ============================================================
+  -->
+  <section class="section" id="contact">
+    <div class="container contact-inner">
+
+      <h2 class="section-title center">Get in touch</h2>
+
+      <p class="contact-text">
+        I am looking for a software engineering internship and I am happy to talk about
+        any project. Email is the fastest way to reach me.
+      </p>
+
+      <!--
+        mailto: opens the visitor's email app with your address
+        already filled in.
+      -->
+      <a href="mailto:prabodsilva2022@gmail.com" class="email-link">prabodsilva2022@gmail.com</a>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/prabod-silva-b0a466403"
+           target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="assets/resume.pdf" download>Download CV</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--
+    ============================================================
+    8. FOOTER
+       The year is left empty on purpose. script.js fills it in
+       from the visitor's clock, so it is never out of date and
+       you never have to edit it again.
+       &copy; is the © character.
+    ============================================================
+  -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> L. P. P. Silva</p>
+    </div>
+  </footer>
+
+
+  <!--
+    ============================================================
+    MY JAVASCRIPT.
+    Placed at the very BOTTOM on purpose: the browser reads this
+    file from top to bottom, so by the time it reaches this line
+    the whole page already exists and the script can find the
+    elements it needs. If you put it in the <head> instead, it
+    would run too early and fail.
+    ============================================================
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
