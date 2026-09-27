@@ -319,6 +319,67 @@
 
       <div class="project-grid">
 
+                <!-- ---------- DocGuard ---------- -->
+        <article class="project-card">
+          <p class="project-type">Web app &middot; In progress</p>
+          <h3>DocGuard &mdash; Document Expiry Reminder</h3>
+          <p class="project-desc">
+            A privacy-focused web app that tracks when important documents expire &mdash; passports,
+            NICs, driving licences, insurance and visas &mdash; and sends SMS reminders 90, 30, 7 and 1
+            days before the date. Sensitive fields are encrypted at rest with AES-256-GCM, passwords are
+            hashed with scrypt, and no document photos are ever stored. Installs on a phone as a PWA.
+          </p>
+          <ul class="tech-list">
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>SQLite</li>
+            <li>PDFKit</li>
+            <li>PWA</li>
+          </ul>
+          <a href="https://github.com/PrabodSilva/docguard" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        <!-- ---------- Phishing Email Analyzer ---------- -->
+        <article class="project-card">
+          <p class="project-type">Security tool</p>
+          <h3>Phishing Email Analyzer</h3>
+          <p class="project-desc">
+            A Flask tool that reads a suspicious link or a whole .eml file and returns a verdict of SAFE,
+            SUSPICIOUS or PHISHING with a 0&ndash;100 risk score and a plain-English reason. It runs 26
+            checks across three layers &mdash; sender authentication (SPF, DKIM, DMARC), link analysis
+            and content analysis &mdash; and classified all 11 test cases correctly. Mapped to MITRE
+            ATT&amp;CK T1566 and T1036.
+          </p>
+          <ul class="tech-list">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>BeautifulSoup</li>
+            <li>matplotlib</li>
+          </ul>
+          <a href="https://github.com/PrabodSilva/phishing-email-analyzer" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        <!-- ---------- Recon Rover ---------- -->
+        <article class="project-card">
+          <p class="project-type">Security tool</p>
+          <h3>Recon Rover &mdash; Wi-Fi Security Auditor</h3>
+          <p class="project-desc">
+            A wireless auditing tool that scans nearby Wi-Fi networks and grades each one from critical
+            (Open/WEP) to strong (WPA3), then presents the results on a live dashboard with a
+            signal-strength heatmap. It detects rogue access points against a saved baseline and flags
+            possible evil-twin networks by comparing hardware addresses rather than network names.
+            Observational only &mdash; it never connects to any network.
+          </p>
+          <ul class="tech-list">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>matplotlib</li>
+            <li>Networking</li>
+          </ul>
+          <a href="https://github.com/PrabodSilva/recon-rover" class="project-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </article>
+
+        
         <!-- ---------- Project 1 ---------- -->
         <article class="project-card">
           <p class="project-type">University project</p>
@@ -409,6 +470,7 @@
             <li>HR policy</li>
           </ul>
         </article>
+        
 
       </div>
     </div>
